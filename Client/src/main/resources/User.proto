@@ -7,23 +7,22 @@ syntax = "proto3"; /* default is proto2 */
 option java_package = "proto";
 
 /* The greeting service definition. */
-service Greeter {
-  /* Sends a greeting */
-  rpc SayHello (HelloRequest) returns (HelloReply) {}
-  /* Sends another greeting */
-  rpc SayHelloAgain (HelloRequest) returns (HelloReply) {}
+service Connecter {
+  rpc ConnectUser(UserRequest) returns (UserReply) {}
+
 }
 
 /* The request message containing the user's name.*/
-message HelloRequest {
+message UserRequest {
   /* *
    * Messages have field that start from 1 (zero is not allowed. Example of others types are:
    * int32, boolean, enum etc.
    * */
   string name = 1;
+  string cnp= 2;
 }
 
 /* The response message containing the greetings */
-message HelloReply {
+message UserReply {
   string message = 1;
 }

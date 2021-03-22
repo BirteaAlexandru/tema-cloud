@@ -1,6 +1,6 @@
 import io.grpc.Server;
 import io.grpc.ServerBuilder;
-import service.GreeterImpl;
+import service.ConnecterImpl;
 
 import java.io.IOException;
 
@@ -12,7 +12,7 @@ public class Main {
              * and it finds a service declaration in your proto file.
              * Do not forget the client must use the same port in order to connect to this server.
              * */
-            Server server = ServerBuilder.forPort(8999).addService(new GreeterImpl()).build();
+            Server server = ServerBuilder.forPort(8999).addService(new ConnecterImpl()).build();
 
             server.start();
             System.out.println("Server started at " + server.getPort());
